@@ -17,199 +17,70 @@
     --terracotta: #C8743C;
     --terracotta-light: #E8956A;
     --sage: #8BA888;
-    --sage-light: #B8D4B5;
     --white: #FFFFFF;
     --text-muted: #6B7C8A;
   }
 
   html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--navy); overflow-x: hidden; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--navy);
-    overflow-x: hidden;
-  }
-
-  /* ─── NAV ─── */
+  /* NAV */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
     padding: 1.25rem 3rem;
-    background: rgba(245, 240, 232, 0.92);
-    backdrop-filter: blur(8px);
+    background: rgba(245,240,232,0.92); backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--cream-dark);
   }
-  .nav-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.02em;
-    color: var(--navy);
-    text-decoration: none;
-    cursor: pointer;
-  }
+  .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--navy); text-decoration: none; cursor: pointer; }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a {
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    text-decoration: none;
-    cursor: pointer;
-    transition: color 0.2s;
-  }
+  .nav-links a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; cursor: pointer; transition: color 0.2s; }
   .nav-links a:hover { color: var(--terracotta); }
 
-  /* ─── PAGES ─── */
+  /* PAGES */
   .page { display: none; }
   .page.active { display: block; }
 
-  /* ─── HERO ─── */
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 8rem 3rem 4rem;
-    gap: 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .hero-text .eyebrow {
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--terracotta);
-    margin-bottom: 1.5rem;
-  }
-  .hero-text h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.6rem, 4.5vw, 4.2rem);
-    line-height: 1.08;
-    color: var(--navy);
-    margin-bottom: 1.5rem;
-  }
-  .hero-text h1 em { font-style: italic; color: var(--terracotta); }
-  .hero-text p {
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: #4A5E6E;
-    max-width: 420px;
-    margin-bottom: 2.5rem;
-  }
-  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-  .btn-primary {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background: var(--navy);
-    color: var(--cream);
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-    transition: background 0.2s;
-  }
+  /* BUTTONS */
+  .btn-primary { display: inline-block; padding: 0.8rem 2rem; background: var(--navy); color: var(--cream); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-decoration: none; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; transition: background 0.2s; }
   .btn-primary:hover { background: var(--terracotta); }
-
-  .btn-outline {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    border: 1.5px solid var(--navy);
-    color: var(--navy);
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-decoration: none;
-    cursor: pointer;
-    background: none;
-    transition: all 0.2s;
-  }
+  .btn-outline { display: inline-block; padding: 0.8rem 2rem; border: 1.5px solid var(--navy); color: var(--navy); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-decoration: none; cursor: pointer; background: none; font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
   .btn-outline:hover { border-color: var(--terracotta); color: var(--terracotta); }
 
-  .hero-photo-frame {
-    width: 100%;
-    aspect-ratio: 3/4;
-    background: var(--cream-dark);
-    overflow: hidden;
-    border: 1px solid var(--cream-dark);
-    position: relative;
-  }
-  .hero-photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* HERO */
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 8rem 3rem 4rem; gap: 4rem; max-width: 1200px; margin: 0 auto; }
+  .hero-text .eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1.5rem; }
+  .hero-text h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.6rem, 4.5vw, 4.2rem); line-height: 1.08; color: var(--navy); margin-bottom: 1.5rem; }
+  .hero-text h1 em { font-style: italic; color: var(--terracotta); }
+  .hero-text p { font-size: 1.05rem; line-height: 1.75; color: #4A5E6E; max-width: 420px; margin-bottom: 2.5rem; }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-  .photo-placeholder {
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 1rem; color: var(--text-muted);
-    background: linear-gradient(135deg, #E8E1D3 0%, #D9D0C0 100%);
-  }
-  .photo-placeholder .icon-circle {
-    width: 64px; height: 64px; border-radius: 50%;
-    border: 2px dashed var(--text-muted);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem; opacity: 0.5;
-  }
-  .photo-placeholder p { font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.5; }
+  /* GEOMETRIC HERO ILLUSTRATION */
+  .hero-illustration { position: relative; display: flex; align-items: center; justify-content: center; }
+  .hero-illustration svg { width: 100%; max-width: 480px; height: auto; }
 
-  .geo-accent {
-    position: absolute;
-    top: -1.5rem; right: -1.5rem;
-    width: 80px; height: 80px; z-index: -1;
-  }
-
-  /* ─── SHARED SECTION ─── */
+  /* SECTIONS */
   section { padding: 6rem 3rem; }
   .container { max-width: 1200px; margin: 0 auto; }
-  .section-label {
-    font-size: 0.75rem; font-weight: 600;
-    letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--terracotta); margin-bottom: 0.75rem;
-  }
-  .section-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    line-height: 1.1; color: var(--navy); margin-bottom: 3rem;
-  }
+  .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.1; color: var(--navy); margin-bottom: 3rem; }
 
-  /* ─── WORK GRID ─── */
+  /* WORK GRID */
   #work { background: var(--white); }
   .work-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; }
-  .work-card {
-    background: var(--cream);
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.25s;
-  }
+  .work-card { background: var(--cream); overflow: hidden; cursor: pointer; transition: transform 0.25s; }
   .work-card:hover { transform: translateY(-4px); }
   .work-card.large { grid-column: span 7; }
   .work-card.small { grid-column: span 5; }
   .work-card.medium { grid-column: span 6; }
   .work-card.wide { grid-column: span 12; }
 
-  .card-image {
-    width: 100%; aspect-ratio: 16/10;
-    background: var(--cream-dark);
-    overflow: hidden; position: relative;
-  }
+  .card-image { width: 100%; aspect-ratio: 16/10; background: var(--cream-dark); overflow: hidden; }
   .card-image.tall { aspect-ratio: 4/5; }
   .card-image.short { aspect-ratio: 16/7; }
   .card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-  .img-placeholder {
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 0.75rem;
-  }
+  .img-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; }
   .img-placeholder .placeholder-icon { font-size: 2rem; opacity: 0.25; }
   .img-placeholder p { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.35; color: var(--navy); }
 
@@ -219,34 +90,28 @@
   .ph-warm { background: #DDD0BB; }
   .ph-pale { background: #D4CCBC; }
   .ph-stone { background: #C8C0B0; }
+  .ph-blush { background: #E0C4BC; }
+  .ph-moss { background: #B2C4A8; }
 
   .card-body { padding: 1.25rem 1.5rem 1.5rem; }
   .card-tag { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.5rem; }
   .card-title { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 0.5rem; }
   .card-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
-  .card-cta {
-    display: inline-block;
-    margin-top: 1rem;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--terracotta);
-  }
+  .card-cta { display: inline-block; margin-top: 1rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta); }
 
-  /* ─── ABOUT ─── */
+  /* ABOUT */
   #about { background: var(--navy); color: var(--cream); }
   #about .section-title { color: var(--cream); }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
   .about-text p { font-size: 1rem; line-height: 1.85; color: rgba(245,240,232,0.75); margin-bottom: 1.25rem; }
   .about-text p strong { color: var(--terracotta-light); font-weight: 500; }
-  .about-photo { width: 100%; aspect-ratio: 1; background: var(--navy-mid); overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
-  .about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .about-illustration { display: flex; align-items: center; justify-content: center; padding: 2rem; }
+  .about-illustration svg { width: 100%; max-width: 360px; height: auto; }
   .skills-list { margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
   .skill-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; color: rgba(245,240,232,0.65); }
   .skill-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--terracotta-light); flex-shrink: 0; }
 
-  /* ─── EXPERIENCE ─── */
+  /* EXPERIENCE */
   #experience { background: var(--cream); }
   .exp-list { display: flex; flex-direction: column; }
   .exp-item { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 2rem 0; border-top: 1px solid var(--cream-dark); }
@@ -256,146 +121,79 @@
   .exp-role { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 0.6rem; }
   .exp-desc { font-size: 0.9rem; line-height: 1.7; color: var(--text-muted); }
 
-  /* ─── CONTACT ─── */
+  /* CONTACT */
   #contact { background: var(--cream-dark); text-align: center; padding: 8rem 3rem; }
   .contact-intro { font-size: 1rem; color: var(--text-muted); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.75; }
   .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
   .contact-detail { font-size: 0.85rem; color: var(--text-muted); margin-top: 2rem; }
-  .contact-detail a { color: var(--navy); text-decoration: none; font-weight: 500; }
-  .contact-detail a:hover { color: var(--terracotta); }
 
-  /* ─── PHOTO STRIP ─── */
+  /* PHOTO STRIP */
   .photo-strip { background: var(--navy); overflow: hidden; }
   .strip-inner { display: flex; gap: 4px; }
-  .strip-cell { flex: 1; aspect-ratio: 1; overflow: hidden; }
+  .strip-cell { flex: 1; overflow: hidden; }
   .strip-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-  /* ─── FOOTER ─── */
+  /* FOOTER */
   footer { background: var(--navy); color: rgba(245,240,232,0.4); text-align: center; padding: 2rem 3rem; font-size: 0.78rem; letter-spacing: 0.06em; }
 
-  /* ─── PROJECT PAGE ─── */
+  /* PROJECT PAGES */
   .project-page { background: var(--cream); min-height: 100vh; }
-
-  .project-hero {
-    padding: 8rem 3rem 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-bottom: 1px solid var(--cream-dark);
-  }
-
-  .back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
-    margin-bottom: 2.5rem;
-    transition: color 0.2s;
-  }
+  .project-hero { padding: 8rem 3rem 4rem; max-width: 1200px; margin: 0 auto; border-bottom: 1px solid var(--cream-dark); }
+  .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); cursor: pointer; background: none; border: none; padding: 0; margin-bottom: 2.5rem; font-family: 'DM Sans', sans-serif; transition: color 0.2s; }
   .back-btn:hover { color: var(--terracotta); }
-  .back-btn::before { content: "←"; font-size: 1rem; }
-
+  .back-btn::before { content: "←"; font-size: 1rem; margin-right: 0.25rem; }
   .project-meta { display: flex; gap: 3rem; margin-bottom: 2rem; flex-wrap: wrap; }
-  .meta-item {}
   .meta-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.3rem; }
   .meta-value { font-size: 0.9rem; color: var(--text-muted); }
-
-  .project-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    line-height: 1.05;
-    color: var(--navy);
-    margin-bottom: 1.5rem;
-    max-width: 800px;
-  }
-
-  .project-intro {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #4A5E6E;
-    max-width: 660px;
-  }
-
-  .project-body {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 3rem 6rem;
-  }
-
-  .project-writeup {
-    max-width: 660px;
-    margin-bottom: 4rem;
-  }
-
-  .project-writeup h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.5rem;
-    color: var(--navy);
-    margin-bottom: 1rem;
-  }
-
-  .project-writeup p {
-    font-size: 0.95rem;
-    line-height: 1.85;
-    color: #4A5E6E;
-    margin-bottom: 1rem;
-  }
-
-  /* Gallery */
-  .gallery-label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--terracotta);
-    margin-bottom: 1.5rem;
-  }
-
-  .gallery-grid {
-    display: grid;
-    gap: 1rem;
-  }
-
+  .project-title { font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.05; color: var(--navy); margin-bottom: 1.5rem; max-width: 800px; }
+  .project-intro { font-size: 1.1rem; line-height: 1.8; color: #4A5E6E; max-width: 660px; }
+  .project-body { max-width: 1200px; margin: 0 auto; padding: 4rem 3rem 6rem; }
+  .project-writeup { max-width: 660px; margin-bottom: 4rem; }
+  .project-writeup h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 1rem; margin-top: 1.5rem; }
+  .project-writeup p { font-size: 0.95rem; line-height: 1.85; color: #4A5E6E; margin-bottom: 1rem; }
+  .gallery-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1.5rem; }
+  .gallery-grid { display: grid; gap: 1rem; }
   .gallery-grid.cols-2 { grid-template-columns: 1fr 1fr; }
   .gallery-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
   .gallery-grid.cols-1 { grid-template-columns: 1fr; }
-
-  .gallery-item {}
-
-  .gallery-img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    background: var(--cream-dark);
-    overflow: hidden;
-    margin-bottom: 0.75rem;
-  }
+  .gallery-img { width: 100%; aspect-ratio: 4/3; background: var(--cream-dark); overflow: hidden; margin-bottom: 0.75rem; }
   .gallery-img.square { aspect-ratio: 1; }
   .gallery-img.tall { aspect-ratio: 3/4; }
   .gallery-img.wide { aspect-ratio: 16/9; }
   .gallery-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
   .gallery-caption { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
   .gallery-caption strong { color: var(--navy); font-weight: 500; }
-
   .gallery-section { margin-bottom: 4rem; }
 
-  /* ─── RESPONSIVE ─── */
+  /* MISC PAGE */
+  .misc-intro { font-size: 1rem; line-height: 1.75; color: #4A5E6E; max-width: 600px; margin-bottom: 3rem; }
+  .misc-masonry { columns: 3; column-gap: 1rem; }
+  .misc-masonry .gallery-img { break-inside: avoid; margin-bottom: 1rem; aspect-ratio: unset; height: auto; }
+  .misc-masonry .gallery-img img { width: 100%; height: auto; display: block; object-fit: unset; }
+  .misc-masonry .misc-item { break-inside: avoid; margin-bottom: 1rem; }
+  .misc-masonry .misc-block { width: 100%; background: var(--cream-dark); overflow: hidden; margin-bottom: 0.5rem; }
+  .misc-masonry .misc-block img { width: 100%; height: auto; display: block; }
+  .misc-masonry .misc-block.ph { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+
+  /* responsive misc */
+  @media (max-width: 900px) {
+    .misc-masonry { columns: 2; }
+  }
+  @media (max-width: 560px) {
+    .misc-masonry { columns: 1; }
+  }
+
+  /* RESPONSIVE */
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
-    .nav-links { gap: 1.5rem; }
+    .nav-links { gap: 1.2rem; }
     .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; }
-    .hero-image { display: none; }
+    .hero-illustration { display: none; }
     .hero-text p { max-width: 100%; }
     section { padding: 4rem 1.5rem; }
     .work-card.large, .work-card.small, .work-card.medium { grid-column: span 12; }
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-illustration { display: none; }
     .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
     #contact { padding: 5rem 1.5rem; }
     .project-hero, .project-body { padding-left: 1.5rem; padding-right: 1.5rem; }
@@ -406,21 +204,20 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a class="nav-logo" onclick="showPage('home')">Nada El-Fakharany</a>
   <ul class="nav-links">
     <li><a onclick="showPage('home'); scrollToSection('work')">Work</a></li>
+    <li><a onclick="showPage('misc')">Gallery</a></li>
     <li><a onclick="showPage('home'); scrollToSection('about')">About</a></li>
     <li><a onclick="showPage('home'); scrollToSection('experience')">Experience</a></li>
     <li><a onclick="showPage('home'); scrollToSection('contact')">Contact</a></li>
   </ul>
 </nav>
 
-<!-- ═══════════════════════════════════════════ HOME PAGE -->
+<!-- ══════════════════════════ HOME -->
 <div id="page-home" class="page active">
 
-  <!-- HERO -->
   <section style="padding:0;">
     <div class="hero">
       <div class="hero-text">
@@ -432,17 +229,58 @@
           <button class="btn-outline" onclick="scrollToSection('contact')">Get in touch</button>
         </div>
       </div>
-      <div class="hero-image" style="position:relative;">
-        <div class="hero-photo-frame">
-          <div class="photo-placeholder">
-            <div class="icon-circle">&#9786;</div>
-            <p>Your headshot here</p>
-          </div>
-        </div>
-        <svg class="geo-accent" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="80" height="80" fill="none" stroke="#C8743C" stroke-width="1.5" opacity="0.5"/>
-          <rect x="10" y="10" width="60" height="60" fill="none" stroke="#C8743C" stroke-width="1" opacity="0.3"/>
-          <rect x="20" y="20" width="40" height="40" fill="none" stroke="#C8743C" stroke-width="0.5" opacity="0.2"/>
+
+      <!-- GEOMETRIC ILLUSTRATION -->
+      <div class="hero-illustration">
+        <svg viewBox="0 0 480 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Background rect -->
+          <rect x="40" y="40" width="400" height="440" fill="#E8E1D3"/>
+
+          <!-- Large terracotta square offset -->
+          <rect x="80" y="70" width="200" height="200" fill="#C8743C" opacity="0.18"/>
+
+          <!-- Nested geometric rings – Islamic-inspired -->
+          <g transform="translate(240, 260)">
+            <!-- Outer octagon -->
+            <polygon points="0,-110 77.8,-77.8 110,0 77.8,77.8 0,110 -77.8,77.8 -110,0 -77.8,-77.8" fill="none" stroke="#0D1B2A" stroke-width="1.5" opacity="0.15"/>
+            <!-- Mid octagon -->
+            <polygon points="0,-80 56.6,-56.6 80,0 56.6,56.6 0,80 -56.6,56.6 -80,0 -56.6,-56.6" fill="none" stroke="#C8743C" stroke-width="1.5" opacity="0.5"/>
+            <!-- Inner octagon -->
+            <polygon points="0,-50 35.4,-35.4 50,0 35.4,35.4 0,50 -35.4,35.4 -50,0 -35.4,-35.4" fill="none" stroke="#0D1B2A" stroke-width="1" opacity="0.2"/>
+            <!-- Centre square rotated -->
+            <rect x="-22" y="-22" width="44" height="44" fill="#C8743C" opacity="0.6" transform="rotate(45)"/>
+            <!-- Centre dot -->
+            <circle cx="0" cy="0" r="6" fill="#0D1B2A" opacity="0.5"/>
+
+            <!-- Radiating lines -->
+            <line x1="0" y1="-110" x2="0" y2="-50" stroke="#0D1B2A" stroke-width="1" opacity="0.12"/>
+            <line x1="0" y1="50" x2="0" y2="110" stroke="#0D1B2A" stroke-width="1" opacity="0.12"/>
+            <line x1="-110" y1="0" x2="-50" y2="0" stroke="#0D1B2A" stroke-width="1" opacity="0.12"/>
+            <line x1="50" y1="0" x2="110" y2="0" stroke="#0D1B2A" stroke-width="1" opacity="0.12"/>
+            <line x1="-77.8" y1="-77.8" x2="-35.4" y2="-35.4" stroke="#0D1B2A" stroke-width="1" opacity="0.1"/>
+            <line x1="35.4" y1="-35.4" x2="77.8" y2="-77.8" stroke="#0D1B2A" stroke-width="1" opacity="0.1"/>
+            <line x1="-77.8" y1="77.8" x2="-35.4" y2="35.4" stroke="#0D1B2A" stroke-width="1" opacity="0.1"/>
+            <line x1="35.4" y1="35.4" x2="77.8" y2="77.8" stroke="#0D1B2A" stroke-width="1" opacity="0.1"/>
+          </g>
+
+          <!-- Corner accents -->
+          <rect x="40" y="40" width="30" height="30" fill="none" stroke="#C8743C" stroke-width="2" opacity="0.6"/>
+          <rect x="410" y="40" width="30" height="30" fill="none" stroke="#C8743C" stroke-width="2" opacity="0.6"/>
+          <rect x="40" y="450" width="30" height="30" fill="none" stroke="#C8743C" stroke-width="2" opacity="0.6"/>
+          <rect x="410" y="450" width="30" height="30" fill="none" stroke="#C8743C" stroke-width="2" opacity="0.6"/>
+
+          <!-- Small scattered diamonds -->
+          <rect x="95" y="290" width="14" height="14" transform="rotate(45,102,297)" fill="#C8743C" opacity="0.3"/>
+          <rect x="355" y="110" width="10" height="10" transform="rotate(45,360,115)" fill="#8BA888" opacity="0.5"/>
+          <rect x="360" y="380" width="18" height="18" transform="rotate(45,369,389)" fill="#0D1B2A" opacity="0.1"/>
+          <rect x="70" y="160" width="10" height="10" transform="rotate(45,75,165)" fill="#8BA888" opacity="0.4"/>
+
+          <!-- Horizontal rule lines top -->
+          <line x1="40" y1="120" x2="160" y2="120" stroke="#0D1B2A" stroke-width="1" opacity="0.1"/>
+          <line x1="40" y1="128" x2="130" y2="128" stroke="#C8743C" stroke-width="1.5" opacity="0.25"/>
+
+          <!-- Sage block bottom right -->
+          <rect x="310" y="390" width="130" height="90" fill="#8BA888" opacity="0.2"/>
         </svg>
       </div>
     </div>
@@ -456,12 +294,7 @@
       <div class="work-grid">
 
         <div class="work-card large" onclick="showProject('tadabbur')">
-          <div class="card-image">
-            <div class="img-placeholder ph-terracotta">
-              <div class="placeholder-icon">◈</div>
-              <p>Insert project image</p>
-            </div>
-          </div>
+          <div class="card-image"><div class="img-placeholder ph-terracotta"><div class="placeholder-icon">◈</div><p>Insert project image</p></div></div>
           <div class="card-body">
             <p class="card-tag">Branding · Logo Design</p>
             <h3 class="card-title">Tadabbur Brand Identity</h3>
@@ -471,12 +304,7 @@
         </div>
 
         <div class="work-card small" onclick="showProject('mas')">
-          <div class="card-image tall">
-            <div class="img-placeholder ph-sage">
-              <div class="placeholder-icon">◈</div>
-              <p>Insert project image</p>
-            </div>
-          </div>
+          <div class="card-image tall"><div class="img-placeholder ph-sage"><div class="placeholder-icon">◈</div><p>Insert project image</p></div></div>
           <div class="card-body">
             <p class="card-tag">Event Marketing · Print</p>
             <h3 class="card-title">MAS Event Campaigns</h3>
@@ -486,12 +314,7 @@
         </div>
 
         <div class="work-card medium" onclick="showProject('charity')">
-          <div class="card-image">
-            <div class="img-placeholder ph-navy">
-              <div class="placeholder-icon">◈</div>
-              <p>Insert project image</p>
-            </div>
-          </div>
+          <div class="card-image"><div class="img-placeholder ph-navy"><div class="placeholder-icon">◈</div><p>Insert project image</p></div></div>
           <div class="card-body">
             <p class="card-tag">Social Media · Digital Design</p>
             <h3 class="card-title">Charity Week Global Campaign</h3>
@@ -501,12 +324,7 @@
         </div>
 
         <div class="work-card medium" onclick="showProject('nasa')">
-          <div class="card-image">
-            <div class="img-placeholder ph-warm">
-              <div class="placeholder-icon">◈</div>
-              <p>Insert project image</p>
-            </div>
-          </div>
+          <div class="card-image"><div class="img-placeholder ph-warm"><div class="placeholder-icon">◈</div><p>Insert project image</p></div></div>
           <div class="card-body">
             <p class="card-tag">Identity · Social Media</p>
             <h3 class="card-title">NASA Visual Identity</h3>
@@ -516,12 +334,7 @@
         </div>
 
         <div class="work-card wide" onclick="showProject('ux')">
-          <div class="card-image short">
-            <div class="img-placeholder ph-pale">
-              <div class="placeholder-icon">◈</div>
-              <p>Insert UX / photography work</p>
-            </div>
-          </div>
+          <div class="card-image short"><div class="img-placeholder ph-pale"><div class="placeholder-icon">◈</div><p>Insert UX / photography work</p></div></div>
           <div class="card-body">
             <p class="card-tag">UX Design · Photography</p>
             <h3 class="card-title">UX Process &amp; Photography</h3>
@@ -568,13 +381,53 @@
             <div class="skill-item"><span class="skill-dot"></span>Arabic &amp; English</div>
           </div>
         </div>
-        <div>
-          <div class="about-photo">
-            <div class="photo-placeholder" style="background:var(--navy-mid);color:rgba(245,240,232,0.3);">
-              <div class="icon-circle" style="border-color:rgba(245,240,232,0.2);">&#9786;</div>
-              <p>Your photo here</p>
-            </div>
-          </div>
+        <!-- About illustration -->
+        <div class="about-illustration">
+          <svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="360" height="360" fill="none"/>
+            <!-- Grid of small squares -->
+            <g opacity="0.08">
+              <rect x="20" y="20" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="70" y="20" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="120" y="20" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="170" y="20" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="220" y="20" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="270" y="20" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="300" y="20" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="20" y="70" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="20" y="120" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="20" y="170" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="20" y="220" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="20" y="270" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="300" y="70" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="300" y="120" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="300" y="170" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="300" y="220" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="300" y="270" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="20" y="300" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="70" y="300" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="120" y="300" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="170" y="300" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="220" y="300" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="270" y="300" width="40" height="40" fill="#F5F0E8"/>
+              <rect x="300" y="300" width="40" height="40" fill="#F5F0E8"/>
+            </g>
+            <!-- Central star / geometric form -->
+            <g transform="translate(180,180)">
+              <polygon points="0,-120 34.6,-60 69.3,-60 34.6,0 69.3,60 34.6,60 0,120 -34.6,60 -69.3,60 -34.6,0 -69.3,-60 -34.6,-60" fill="none" stroke="#F5F0E8" stroke-width="1" opacity="0.2"/>
+              <polygon points="0,-80 46.2,-40 46.2,40 0,80 -46.2,40 -46.2,-40" fill="none" stroke="#C8743C" stroke-width="1.5" opacity="0.7"/>
+              <polygon points="0,-50 28.9,-25 28.9,25 0,50 -28.9,25 -28.9,-25" fill="#C8743C" opacity="0.15"/>
+              <circle cx="0" cy="0" r="16" fill="#C8743C" opacity="0.7"/>
+              <circle cx="0" cy="0" r="6" fill="#F5F0E8" opacity="0.9"/>
+              <!-- dots at hexagon vertices -->
+              <circle cx="0" cy="-80" r="4" fill="#8BA888" opacity="0.7"/>
+              <circle cx="46.2" cy="-40" r="4" fill="#8BA888" opacity="0.7"/>
+              <circle cx="46.2" cy="40" r="4" fill="#8BA888" opacity="0.7"/>
+              <circle cx="0" cy="80" r="4" fill="#8BA888" opacity="0.7"/>
+              <circle cx="-46.2" cy="40" r="4" fill="#8BA888" opacity="0.7"/>
+              <circle cx="-46.2" cy="-40" r="4" fill="#8BA888" opacity="0.7"/>
+            </g>
+          </svg>
         </div>
       </div>
     </div>
@@ -588,65 +441,36 @@
       <div class="exp-list">
         <div class="exp-item">
           <div class="exp-date">Sep 2022 – Present</div>
-          <div>
-            <p class="exp-org">Muslim American Society — Livonia, MI</p>
-            <h3 class="exp-role">Graphic Designer</h3>
-            <p class="exp-desc">Designed print and digital marketing materials for community events. Collaborated with a team through iterative feedback to increase visual appeal and build audience reach.</p>
-          </div>
+          <div><p class="exp-org">Muslim American Society — Livonia, MI</p><h3 class="exp-role">Graphic Designer</h3><p class="exp-desc">Designed print and digital marketing materials for community events. Collaborated with a team through iterative feedback to increase visual appeal and build audience reach.</p></div>
         </div>
         <div class="exp-item">
           <div class="exp-date">Dec 2024 – Present</div>
-          <div>
-            <p class="exp-org">Tadabbur — Southfield, MI</p>
-            <h3 class="exp-role">Logo Developer</h3>
-            <p class="exp-desc">Developed a brand logo and visual identity system aligned with the client's vision. Established brand scheme, concept, and design language from the ground up.</p>
-          </div>
+          <div><p class="exp-org">Tadabbur — Southfield, MI</p><h3 class="exp-role">Logo Developer</h3><p class="exp-desc">Developed a brand logo and visual identity system aligned with the client's vision. Established brand scheme, concept, and design language from the ground up.</p></div>
         </div>
         <div class="exp-item">
           <div class="exp-date">Sep 2023 – Jun 2024</div>
-          <div>
-            <p class="exp-org">Charity Week</p>
-            <h3 class="exp-role">US Marketing Lead</h3>
-            <p class="exp-desc">Led social media design and marketing outreach for the US region. Partnered with marketing leads across countries to coordinate design direction and campaign strategy.</p>
-          </div>
+          <div><p class="exp-org">Charity Week</p><h3 class="exp-role">US Marketing Lead</h3><p class="exp-desc">Led social media design and marketing outreach for the US region. Partnered with marketing leads across countries to coordinate design direction and campaign strategy.</p></div>
         </div>
         <div class="exp-item">
           <div class="exp-date">Aug 2023 – Apr 2024</div>
-          <div>
-            <p class="exp-org">North African Student Association — Ann Arbor, MI</p>
-            <h3 class="exp-role">Social Media Manager</h3>
-            <p class="exp-desc">Managed print and digital marketing for organizational events. Created the association's logo and built out a complete set of marketing assets.</p>
-          </div>
+          <div><p class="exp-org">North African Student Association — Ann Arbor, MI</p><h3 class="exp-role">Social Media Manager</h3><p class="exp-desc">Managed print and digital marketing for organizational events. Created the association's logo and built out a complete set of marketing assets.</p></div>
         </div>
         <div class="exp-item">
           <div class="exp-date">Sep 2022 – Jun 2023</div>
-          <div>
-            <p class="exp-org">Michigan Islamic Academy — Ann Arbor, MI</p>
-            <h3 class="exp-role">Cooking Club Co-Lead</h3>
-            <p class="exp-desc">Co-founded the school's first cooking club. Developed curriculum and presentation materials, led classes, and gathered student feedback to improve the program.</p>
-          </div>
+          <div><p class="exp-org">Michigan Islamic Academy — Ann Arbor, MI</p><h3 class="exp-role">Cooking Club Co-Lead</h3><p class="exp-desc">Co-founded the school's first cooking club. Developed curriculum and presentation materials, led classes, and gathered student feedback to improve the program.</p></div>
         </div>
       </div>
-
       <div style="margin-top:5rem;">
         <p class="section-label">Education</p>
         <h2 class="section-title" style="font-size:1.8rem;margin-bottom:2rem;">Academic background</h2>
         <div class="exp-list">
           <div class="exp-item">
             <div class="exp-date">2023 – 2028</div>
-            <div>
-              <p class="exp-org">University of Michigan</p>
-              <h3 class="exp-role">BS in Information — UX Design Track</h3>
-              <p class="exp-desc">Studying human-centered design, information architecture, and UX research methods within the School of Information.</p>
-            </div>
+            <div><p class="exp-org">University of Michigan</p><h3 class="exp-role">BS in Information — UX Design Track</h3><p class="exp-desc">Studying human-centered design, information architecture, and UX research methods within the School of Information.</p></div>
           </div>
           <div class="exp-item">
             <div class="exp-date">2022 – 2023</div>
-            <div>
-              <p class="exp-org">Michigan Islamic Academy</p>
-              <h3 class="exp-role">High School Diploma</h3>
-              <p class="exp-desc">Graduated with dual enrollment at Washtenaw Community College and Eastern Michigan University.</p>
-            </div>
+            <div><p class="exp-org">Michigan Islamic Academy</p><h3 class="exp-role">High School Diploma</h3><p class="exp-desc">Graduated with dual enrollment at Washtenaw Community College and Eastern Michigan University.</p></div>
           </div>
         </div>
       </div>
@@ -661,18 +485,85 @@
       <p class="contact-intro">Open to freelance projects, internships, and collaborations in UX design and graphic design.</p>
       <div class="contact-links">
         <a href="mailto:nelfakh@umich.edu" class="btn-primary">nelfakh@umich.edu</a>
-        <a href="tel:7347474588" class="btn-outline">734-747-4588</a>
       </div>
       <p class="contact-detail">Based in Canton, MI &nbsp;·&nbsp; Available for remote work</p>
     </div>
   </section>
 
   <footer><p>© 2025 Nada El-Fakharany &nbsp;·&nbsp; UX &amp; Graphic Design</p></footer>
+</div>
 
-</div><!-- end home page -->
+
+<!-- ══════════════════════════ MISC GALLERY -->
+<div id="page-misc" class="page project-page">
+  <div class="project-hero">
+    <button class="back-btn" onclick="showPage('home')">Back to home</button>
+    <h1 class="project-title">Gallery</h1>
+    <p class="project-intro misc-intro">A collection of personal work, experiments, and visual odds and ends — things that don't fit neatly into a project but are worth showing.</p>
+  </div>
+  <div class="project-body">
+
+    <!-- Add as many misc-item blocks as you like. Replace ph-* divs with <img src="your-image.jpg" alt="..."> -->
+    <div class="misc-masonry">
+
+      <div class="misc-item">
+        <div class="misc-block ph ph-terracotta" style="height:260px;"><div class="placeholder-icon" style="opacity:0.2;font-size:1.5rem;">◈</div><p style="font-size:0.65rem;opacity:0.3;letter-spacing:0.06em;text-transform:uppercase;">Image</p></div>
+        <p class="gallery-caption">Add caption</p>
+      </div>
+
+      <div class="misc-item">
+        <div class="misc-block ph ph-sage" style="height:180px;"><div class="placeholder-icon" style="opacity:0.2;font-size:1.5rem;">◈</div><p style="font-size:0.65rem;opacity:0.3;letter-spacing:0.06em;text-transform:uppercase;">Image</p></div>
+        <p class="gallery-caption">Add caption</p>
+      </div>
+
+      <div class="misc-item">
+        <div class="misc-block ph ph-navy" style="height:300px;"><div class="placeholder-icon" style="opacity:0.2;font-size:1.5rem;">◈</div><p style="font-size:0.65rem;opacity:0.3;letter-spacing:0.06em;text-transform:uppercase;">Image</p></div>
+        <p class="gallery-caption">Add caption</p>
+      </div>
+
+      <div class="misc-item">
+        <div class="misc-block ph ph-warm" style="height:220px;"><div class="placeholder-icon" style="opacity:0.2;font-size:1.5rem;">◈</div><p style="font-size:0.65rem;opacity:0.3;letter-spacing:0.06em;text-transform:uppercase;">Image</p></div>
+        <p class="gallery-caption">Add caption</p>
+      </div>
+
+      <div class="misc-item">
+        <div class="misc-block ph ph-blush" style="height:340px;"><div class="placeholder-icon" style="opacity:0.2;font-size:1.5rem;">◈</div><p style="font-size:0.65rem;opacity:0.3;letter-spacing:0.06em;text-transform:uppercase;">Image</p></div>
+        <p class="gallery-caption">Add caption</p>
+      </div>
+
+      <div class="misc-item">
+        <div class="misc-block ph ph-stone" style="height:200px;"><div class="placeholder-icon" style="opacity:0.2;font-size:1.5rem;">◈</div><p style="font-size:0.65rem;opacity:0.3;letter-spacing:0.06em;text-transform:uppercase;">Image</p></div>
+        <p class="gallery-caption">Add caption</p>
+      </div>
+
+      <div class="misc-item">
+        <div class="misc-block ph ph-moss" style="height:260px;"><div class="placeholder-icon" style="opacity:0.2;font-size:1.5rem;">◈</div><p style="font-size:0.65rem;opacity:0.3;letter-spacing:0.06em;text-transform:uppercase;">Image</p></div>
+        <p class="gallery-caption">Add caption</p>
+      </div>
+
+      <div class="misc-item">
+        <div class="misc-block ph ph-pale" style="height:190px;"><div class="placeholder-icon" style="opacity:0.2;font-size:1.5rem;">◈</div><p style="font-size:0.65rem;opacity:0.3;letter-spacing:0.06em;text-transform:uppercase;">Image</p></div>
+        <p class="gallery-caption">Add caption</p>
+      </div>
+
+      <div class="misc-item">
+        <div class="misc-block ph ph-terracotta" style="height:310px;"><div class="placeholder-icon" style="opacity:0.2;font-size:1.5rem;">◈</div><p style="font-size:0.65rem;opacity:0.3;letter-spacing:0.06em;text-transform:uppercase;">Image</p></div>
+        <p class="gallery-caption">Add caption</p>
+      </div>
+
+    </div>
+
+    <div style="margin-top:3rem;">
+      <button class="btn-outline" onclick="showPage('home')">← Back to home</button>
+    </div>
+  </div>
+  <footer><p>© 2025 Nada El-Fakharany &nbsp;·&nbsp; UX &amp; Graphic Design</p></footer>
+</div>
 
 
-<!-- ═══════════════════════════════════════════ PROJECT: TADABBUR -->
+<!-- ══════════════════════════ PROJECT PAGES -->
+
+<!-- TADABBUR -->
 <div id="page-tadabbur" class="page project-page">
   <div class="project-hero">
     <button class="back-btn" onclick="showPage('home')">Back to work</button>
@@ -694,56 +585,33 @@
       <h3>The outcome</h3>
       <p>Describe the final deliverables and how the client responded to the work.</p>
     </div>
-
     <div class="gallery-section">
       <p class="gallery-label">Logo &amp; Mark</p>
       <div class="gallery-grid cols-2">
-        <div class="gallery-item">
-          <div class="gallery-img square"><div class="img-placeholder ph-terracotta"><div class="placeholder-icon">◈</div><p>Logo on light bg</p></div></div>
-          <p class="gallery-caption"><strong>Primary logo</strong> — light background version</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img square"><div class="img-placeholder ph-navy"><div class="placeholder-icon">◈</div><p>Logo on dark bg</p></div></div>
-          <p class="gallery-caption"><strong>Primary logo</strong> — dark background version</p>
-        </div>
+        <div class="gallery-item"><div class="gallery-img square"><div class="img-placeholder ph-terracotta"><div class="placeholder-icon">◈</div><p>Logo on light bg</p></div></div><p class="gallery-caption"><strong>Primary logo</strong> — light background version</p></div>
+        <div class="gallery-item"><div class="gallery-img square"><div class="img-placeholder ph-navy"><div class="placeholder-icon">◈</div><p>Logo on dark bg</p></div></div><p class="gallery-caption"><strong>Primary logo</strong> — dark background version</p></div>
       </div>
     </div>
-
     <div class="gallery-section">
       <p class="gallery-label">Brand System</p>
       <div class="gallery-grid cols-1">
-        <div class="gallery-item">
-          <div class="gallery-img wide"><div class="img-placeholder ph-warm"><div class="placeholder-icon">◈</div><p>Full brand sheet / color palette</p></div></div>
-          <p class="gallery-caption"><strong>Brand sheet</strong> — color palette, typography, and visual language</p>
-        </div>
+        <div class="gallery-item"><div class="gallery-img wide"><div class="img-placeholder ph-warm"><div class="placeholder-icon">◈</div><p>Full brand sheet / color palette</p></div></div><p class="gallery-caption"><strong>Brand sheet</strong> — color palette, typography, and visual language</p></div>
       </div>
     </div>
-
     <div class="gallery-section">
       <p class="gallery-label">Applications &amp; Mockups</p>
       <div class="gallery-grid cols-3">
-        <div class="gallery-item">
-          <div class="gallery-img"><div class="img-placeholder ph-sage"><div class="placeholder-icon">◈</div><p>Mockup 1</p></div></div>
-          <p class="gallery-caption">Add caption for this mockup</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img"><div class="img-placeholder ph-pale"><div class="placeholder-icon">◈</div><p>Mockup 2</p></div></div>
-          <p class="gallery-caption">Add caption for this mockup</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img"><div class="img-placeholder ph-stone"><div class="placeholder-icon">◈</div><p>Mockup 3</p></div></div>
-          <p class="gallery-caption">Add caption for this mockup</p>
-        </div>
+        <div class="gallery-item"><div class="gallery-img"><div class="img-placeholder ph-sage"><div class="placeholder-icon">◈</div><p>Mockup 1</p></div></div><p class="gallery-caption">Add caption</p></div>
+        <div class="gallery-item"><div class="gallery-img"><div class="img-placeholder ph-pale"><div class="placeholder-icon">◈</div><p>Mockup 2</p></div></div><p class="gallery-caption">Add caption</p></div>
+        <div class="gallery-item"><div class="gallery-img"><div class="img-placeholder ph-stone"><div class="placeholder-icon">◈</div><p>Mockup 3</p></div></div><p class="gallery-caption">Add caption</p></div>
       </div>
     </div>
-
     <button class="btn-outline" onclick="showPage('home')">← Back to all work</button>
   </div>
   <footer><p>© 2025 Nada El-Fakharany &nbsp;·&nbsp; UX &amp; Graphic Design</p></footer>
 </div>
 
-
-<!-- ═══════════════════════════════════════════ PROJECT: MAS -->
+<!-- MAS -->
 <div id="page-mas" class="page project-page">
   <div class="project-hero">
     <button class="back-btn" onclick="showPage('home')">Back to work</button>
@@ -759,38 +627,23 @@
   <div class="project-body">
     <div class="project-writeup">
       <h3>The work</h3>
-      <p>Describe the types of events you designed for, the formats you worked in (flyers, social posts, banners, etc.), and any creative challenges you solved.</p>
+      <p>Describe the types of events you designed for, the formats (flyers, social posts, banners, etc.), and any creative challenges you solved.</p>
       <h3>Process &amp; collaboration</h3>
       <p>How did you work with the team? What was the feedback loop like, and how did the designs evolve over time?</p>
     </div>
     <div class="gallery-section">
       <p class="gallery-label">Event Posters &amp; Flyers</p>
       <div class="gallery-grid cols-3">
-        <div class="gallery-item">
-          <div class="gallery-img tall"><div class="img-placeholder ph-sage"><div class="placeholder-icon">◈</div><p>Event poster</p></div></div>
-          <p class="gallery-caption">Add caption — event name, date, or design notes</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img tall"><div class="img-placeholder ph-terracotta"><div class="placeholder-icon">◈</div><p>Event poster</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img tall"><div class="img-placeholder ph-warm"><div class="placeholder-icon">◈</div><p>Event poster</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
+        <div class="gallery-item"><div class="gallery-img tall"><div class="img-placeholder ph-sage"><div class="placeholder-icon">◈</div><p>Event poster</p></div></div><p class="gallery-caption">Add caption</p></div>
+        <div class="gallery-item"><div class="gallery-img tall"><div class="img-placeholder ph-terracotta"><div class="placeholder-icon">◈</div><p>Event poster</p></div></div><p class="gallery-caption">Add caption</p></div>
+        <div class="gallery-item"><div class="gallery-img tall"><div class="img-placeholder ph-warm"><div class="placeholder-icon">◈</div><p>Event poster</p></div></div><p class="gallery-caption">Add caption</p></div>
       </div>
     </div>
     <div class="gallery-section">
       <p class="gallery-label">Digital &amp; Social</p>
       <div class="gallery-grid cols-2">
-        <div class="gallery-item">
-          <div class="gallery-img square"><div class="img-placeholder ph-navy"><div class="placeholder-icon">◈</div><p>Social post</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img square"><div class="img-placeholder ph-pale"><div class="placeholder-icon">◈</div><p>Social post</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
+        <div class="gallery-item"><div class="gallery-img square"><div class="img-placeholder ph-navy"><div class="placeholder-icon">◈</div><p>Social post</p></div></div><p class="gallery-caption">Add caption</p></div>
+        <div class="gallery-item"><div class="gallery-img square"><div class="img-placeholder ph-pale"><div class="placeholder-icon">◈</div><p>Social post</p></div></div><p class="gallery-caption">Add caption</p></div>
       </div>
     </div>
     <button class="btn-outline" onclick="showPage('home')">← Back to all work</button>
@@ -798,8 +651,7 @@
   <footer><p>© 2025 Nada El-Fakharany &nbsp;·&nbsp; UX &amp; Graphic Design</p></footer>
 </div>
 
-
-<!-- ═══════════════════════════════════════════ PROJECT: CHARITY WEEK -->
+<!-- CHARITY -->
 <div id="page-charity" class="page project-page">
   <div class="project-hero">
     <button class="back-btn" onclick="showPage('home')">Back to work</button>
@@ -822,22 +674,10 @@
     <div class="gallery-section">
       <p class="gallery-label">Campaign Graphics</p>
       <div class="gallery-grid cols-2">
-        <div class="gallery-item">
-          <div class="gallery-img square"><div class="img-placeholder ph-navy"><div class="placeholder-icon">◈</div><p>Campaign graphic</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img square"><div class="img-placeholder ph-terracotta"><div class="placeholder-icon">◈</div><p>Campaign graphic</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img square"><div class="img-placeholder ph-sage"><div class="placeholder-icon">◈</div><p>Campaign graphic</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img square"><div class="img-placeholder ph-warm"><div class="placeholder-icon">◈</div><p>Campaign graphic</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
+        <div class="gallery-item"><div class="gallery-img square"><div class="img-placeholder ph-navy"><div class="placeholder-icon">◈</div><p>Campaign graphic</p></div></div><p class="gallery-caption">Add caption</p></div>
+        <div class="gallery-item"><div class="gallery-img square"><div class="img-placeholder ph-terracotta"><div class="placeholder-icon">◈</div><p>Campaign graphic</p></div></div><p class="gallery-caption">Add caption</p></div>
+        <div class="gallery-item"><div class="gallery-img square"><div class="img-placeholder ph-sage"><div class="placeholder-icon">◈</div><p>Campaign graphic</p></div></div><p class="gallery-caption">Add caption</p></div>
+        <div class="gallery-item"><div class="gallery-img square"><div class="img-placeholder ph-warm"><div class="placeholder-icon">◈</div><p>Campaign graphic</p></div></div><p class="gallery-caption">Add caption</p></div>
       </div>
     </div>
     <button class="btn-outline" onclick="showPage('home')">← Back to all work</button>
@@ -845,8 +685,7 @@
   <footer><p>© 2025 Nada El-Fakharany &nbsp;·&nbsp; UX &amp; Graphic Design</p></footer>
 </div>
 
-
-<!-- ═══════════════════════════════════════════ PROJECT: NASA -->
+<!-- NASA -->
 <div id="page-nasa" class="page project-page">
   <div class="project-hero">
     <button class="back-btn" onclick="showPage('home')">Back to work</button>
@@ -862,38 +701,23 @@
   <div class="project-body">
     <div class="project-writeup">
       <h3>Starting from zero</h3>
-      <p>Describe what it was like building an identity from scratch for a student organization — what the association wanted to communicate, who the audience was.</p>
+      <p>Describe what it was like building an identity from scratch for a student organization — what the association wanted to communicate and who the audience was.</p>
       <h3>Logo development</h3>
       <p>Walk through your logo design process — sketches, directions explored, final rationale.</p>
     </div>
     <div class="gallery-section">
       <p class="gallery-label">Logo &amp; Identity</p>
       <div class="gallery-grid cols-2">
-        <div class="gallery-item">
-          <div class="gallery-img square"><div class="img-placeholder ph-warm"><div class="placeholder-icon">◈</div><p>Logo</p></div></div>
-          <p class="gallery-caption"><strong>Primary logo</strong></p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img square"><div class="img-placeholder ph-navy"><div class="placeholder-icon">◈</div><p>Logo variations</p></div></div>
-          <p class="gallery-caption"><strong>Logo variations</strong> — alternate lockups or marks</p>
-        </div>
+        <div class="gallery-item"><div class="gallery-img square"><div class="img-placeholder ph-warm"><div class="placeholder-icon">◈</div><p>Logo</p></div></div><p class="gallery-caption"><strong>Primary logo</strong></p></div>
+        <div class="gallery-item"><div class="gallery-img square"><div class="img-placeholder ph-navy"><div class="placeholder-icon">◈</div><p>Logo variations</p></div></div><p class="gallery-caption"><strong>Logo variations</strong></p></div>
       </div>
     </div>
     <div class="gallery-section">
       <p class="gallery-label">Marketing Materials</p>
       <div class="gallery-grid cols-3">
-        <div class="gallery-item">
-          <div class="gallery-img"><div class="img-placeholder ph-sage"><div class="placeholder-icon">◈</div><p>Marketing piece</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img"><div class="img-placeholder ph-pale"><div class="placeholder-icon">◈</div><p>Marketing piece</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img"><div class="img-placeholder ph-stone"><div class="placeholder-icon">◈</div><p>Marketing piece</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
+        <div class="gallery-item"><div class="gallery-img"><div class="img-placeholder ph-sage"><div class="placeholder-icon">◈</div><p>Marketing piece</p></div></div><p class="gallery-caption">Add caption</p></div>
+        <div class="gallery-item"><div class="gallery-img"><div class="img-placeholder ph-pale"><div class="placeholder-icon">◈</div><p>Marketing piece</p></div></div><p class="gallery-caption">Add caption</p></div>
+        <div class="gallery-item"><div class="gallery-img"><div class="img-placeholder ph-stone"><div class="placeholder-icon">◈</div><p>Marketing piece</p></div></div><p class="gallery-caption">Add caption</p></div>
       </div>
     </div>
     <button class="btn-outline" onclick="showPage('home')">← Back to all work</button>
@@ -901,8 +725,7 @@
   <footer><p>© 2025 Nada El-Fakharany &nbsp;·&nbsp; UX &amp; Graphic Design</p></footer>
 </div>
 
-
-<!-- ═══════════════════════════════════════════ PROJECT: UX + PHOTOGRAPHY -->
+<!-- UX + PHOTOGRAPHY -->
 <div id="page-ux" class="page project-page">
   <div class="project-hero">
     <button class="back-btn" onclick="showPage('home')">Back to work</button>
@@ -922,43 +745,19 @@
     <div class="gallery-section">
       <p class="gallery-label">UX Process</p>
       <div class="gallery-grid cols-2">
-        <div class="gallery-item">
-          <div class="gallery-img wide"><div class="img-placeholder ph-pale"><div class="placeholder-icon">◈</div><p>Wireframes / sketches</p></div></div>
-          <p class="gallery-caption"><strong>Wireframes</strong> — early-stage sketches and lo-fi layouts</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img wide"><div class="img-placeholder ph-navy"><div class="placeholder-icon">◈</div><p>Prototype / hi-fi screens</p></div></div>
-          <p class="gallery-caption"><strong>Hi-fi prototype</strong> — final screen designs</p>
-        </div>
+        <div class="gallery-item"><div class="gallery-img wide"><div class="img-placeholder ph-pale"><div class="placeholder-icon">◈</div><p>Wireframes / sketches</p></div></div><p class="gallery-caption"><strong>Wireframes</strong> — early-stage sketches and lo-fi layouts</p></div>
+        <div class="gallery-item"><div class="gallery-img wide"><div class="img-placeholder ph-navy"><div class="placeholder-icon">◈</div><p>Prototype / hi-fi screens</p></div></div><p class="gallery-caption"><strong>Hi-fi prototype</strong> — final screen designs</p></div>
       </div>
     </div>
     <div class="gallery-section">
       <p class="gallery-label">Photography</p>
       <div class="gallery-grid cols-3">
-        <div class="gallery-item">
-          <div class="gallery-img"><div class="img-placeholder ph-stone"><div class="placeholder-icon">◈</div><p>Photo</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img"><div class="img-placeholder ph-sage"><div class="placeholder-icon">◈</div><p>Photo</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img"><div class="img-placeholder ph-terracotta"><div class="placeholder-icon">◈</div><p>Photo</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img"><div class="img-placeholder ph-warm"><div class="placeholder-icon">◈</div><p>Photo</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img"><div class="img-placeholder ph-pale"><div class="placeholder-icon">◈</div><p>Photo</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img"><div class="img-placeholder ph-navy"><div class="placeholder-icon">◈</div><p>Photo</p></div></div>
-          <p class="gallery-caption">Add caption</p>
-        </div>
+        <div class="gallery-item"><div class="gallery-img"><div class="img-placeholder ph-stone"><div class="placeholder-icon">◈</div><p>Photo</p></div></div><p class="gallery-caption">Add caption</p></div>
+        <div class="gallery-item"><div class="gallery-img"><div class="img-placeholder ph-sage"><div class="placeholder-icon">◈</div><p>Photo</p></div></div><p class="gallery-caption">Add caption</p></div>
+        <div class="gallery-item"><div class="gallery-img"><div class="img-placeholder ph-terracotta"><div class="placeholder-icon">◈</div><p>Photo</p></div></div><p class="gallery-caption">Add caption</p></div>
+        <div class="gallery-item"><div class="gallery-img"><div class="img-placeholder ph-warm"><div class="placeholder-icon">◈</div><p>Photo</p></div></div><p class="gallery-caption">Add caption</p></div>
+        <div class="gallery-item"><div class="gallery-img"><div class="img-placeholder ph-pale"><div class="placeholder-icon">◈</div><p>Photo</p></div></div><p class="gallery-caption">Add caption</p></div>
+        <div class="gallery-item"><div class="gallery-img"><div class="img-placeholder ph-navy"><div class="placeholder-icon">◈</div><p>Photo</p></div></div><p class="gallery-caption">Add caption</p></div>
       </div>
     </div>
     <button class="btn-outline" onclick="showPage('home')">← Back to all work</button>
@@ -966,26 +765,17 @@
   <footer><p>© 2025 Nada El-Fakharany &nbsp;·&nbsp; UX &amp; Graphic Design</p></footer>
 </div>
 
-
 <script>
   function showPage(pageId) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById('page-' + pageId).classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
-  function showProject(projectId) {
-    showPage(projectId);
-  }
-
+  function showProject(id) { showPage(id); }
   function scrollToSection(id) {
     showPage('home');
-    setTimeout(() => {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }, 50);
+    setTimeout(() => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 50);
   }
 </script>
-
 </body>
 </html>
