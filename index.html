@@ -9,24 +9,30 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --ink: #1C1C1C;
-    --chalk: #F7F4EF;
-    --chalk-dark: #EAE5DC;
-    --clay: #C8743C;
-    --clay-light: #E8956A;
-    --sage: #7A9E7E;
-    --sage-light: #B8D4B5;
-    --sand: #D4B896;
-    --plum: #6B4F6B;
+:root {
+    --ink: #2C2825;
+    --chalk: #FAF7F2;
+    --chalk-dark: #F0EBE1;
+    --clay: #B85C3A;
+    --clay-light: #D4805E;
+    --sage: #6B8F71;
+    --sage-light: #A8C9AB;
+    --sand: #C9A882;
+    --plum: #7A6080;
     --white: #FFFFFF;
-    --muted: #7A7A7A;
-    --border: #D8D2C8;
+    --muted: #8A8178;
+    --border: #E2DAD0;
   }
 
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', sans-serif; background: var(--chalk); color: var(--ink); overflow-x: hidden; }
 
+  .gallery-img.expandable { cursor: zoom-in; }
+  .lightbox { display: none; position: fixed; inset: 0; background: rgba(44,40,37,0.92); z-index: 999; align-items: center; justify-content: center; padding: 2rem; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; display: block; }
+  .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; font-size: 1.5rem; color: #FAF7F2; cursor: pointer; background: none; border: none; font-family: 'Inter', sans-serif; opacity: 0.7; }
+  .lightbox-close:hover { opacity: 1; }
   /* ── NAV ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -80,8 +86,7 @@
   .btn-outline:hover { border-color: var(--clay); color: var(--clay); }
 
   /* ── HERO ── */
-  .hero-wrap { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 3rem 5rem; max-width: 1300px; margin: 0 auto; padding-top: 7rem; }
-  .hero-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3rem; }
+  .hero-wrap { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 3rem 5rem; max-width: 1300px; margin: 0 auto; padding-top: 5rem; }  .hero-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3rem; }
   .hero-tag { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.08em; }
   .hero-tag span { color: var(--clay); }
   .hero-number { font-family: 'Playfair Display', serif; font-size: 6rem; color: var(--chalk-dark); line-height: 1; font-weight: 700; user-select: none; }
@@ -96,10 +101,7 @@
   .hero-right {}
   .hero-desc { font-size: 1rem; line-height: 1.8; color: var(--muted); margin-bottom: 2.5rem; max-width: 380px; }
   .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
-  .hero-stats { display: flex; gap: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
-  .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--ink); font-weight: 700; display: block; }
-  .stat-label { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
-
+ 
   /* Marquee */
   .marquee-wrap { background: var(--ink); padding: 0.9rem 0; overflow: hidden; white-space: nowrap; }
   .marquee-inner { display: inline-flex; animation: marquee 20s linear infinite; }
@@ -293,11 +295,6 @@
           <button class="btn-primary" onclick="scrollToSection('work')">View my work</button>
           <button class="btn-outline" onclick="scrollToSection('contact')">Get in touch</button>
         </div>
-        <div class="hero-stats">
-          <div><span class="stat-num">3+</span><span class="stat-label">Years designing</span></div>
-          <div><span class="stat-num">4</span><span class="stat-label">Organizations</span></div>
-          <div><span class="stat-num">2</span><span class="stat-label">Languages</span></div>
-        </div>
       </div>
     </div>
   </div>
@@ -343,7 +340,7 @@
         </div>
 
         <div class="work-card small" onclick="showProject('mas')">
-          <div class="card-image tall">
+          <div class="card-image">
             <img src="images/ss.jpeg" alt="MAS Detroit">
           </div>
           <div class="card-body">
@@ -356,7 +353,7 @@
 
         <div class="work-card medium" onclick="showProject('charity')">
           <div class="card-image">
-            <img src="images/Unity in Ramadan - 1.PNG" alt="Charity Week Campaign">
+            <img src="ss2.jpeg" alt="Charity Week Campaign">
           </div>
           <div class="card-body">
             <p class="card-tag">Social Media · Digital Design</p>
@@ -458,10 +455,6 @@
             <div class="skill-item"><span class="skill-num">06</span>Event Marketing</div>
             <div class="skill-item"><span class="skill-num">07</span>Arabic &amp; English</div>
             <div class="skill-item"><span class="skill-num">08</span>Python</div>
-          </div>
-          <div class="about-quote">
-            <p>"Good design is a language everyone understands — even before they read a word."</p>
-            <cite>— Nada El-Fakharany</cite>
           </div>
         </div>
       </div>
@@ -665,15 +658,6 @@
       </div>
     </div>
 
-    <div class="gallery-section">
-      <span class="gallery-label">Applications &amp; Mockups</span>
-      <div class="gallery-grid cols-3">
-        <div class="gallery-item"><div class="gallery-img"><div class="img-placeholder ph-sage"><div class="placeholder-icon">◈</div><p>Mockup</p></div></div><p class="gallery-caption">Add caption</p></div>
-        <div class="gallery-item"><div class="gallery-img"><div class="img-placeholder ph-pale"><div class="placeholder-icon">◈</div><p>Mockup</p></div></div><p class="gallery-caption">Add caption</p></div>
-        <div class="gallery-item"><div class="gallery-img"><div class="img-placeholder ph-stone"><div class="placeholder-icon">◈</div><p>Mockup</p></div></div><p class="gallery-caption">Add caption</p></div>
-      </div>
-    </div>
-
     <button class="btn-outline" onclick="showPage('home')">← Back to all work</button>
   </div>
   <footer><p>© 2025 Nada El-Fakharany &nbsp;·&nbsp; UX &amp; Graphic Design</p></footer>
@@ -705,14 +689,14 @@
       <span class="gallery-label">Torchbearers Program Flyers</span>
       <div class="gallery-grid cols-2">
         <div class="gallery-item">
-          <div class="gallery-img tall">
-            <img src="images/1.png" alt="Torchbearers flyer 1">
+          <div class="gallery-img tall expandable">
+            <img src="images/1.png" alt="Torchbearers flyer 1" onclick="openLightbox(this.src, this.alt)">
           </div>
           <p class="gallery-caption">Torchbearers biweekly program flyer</p>
         </div>
         <div class="gallery-item">
-          <div class="gallery-img tall">
-            <img src="images/2.png" alt="Torchbearers flyer 2">
+          <div class="gallery-img tall expandable">
+            <img src="images/2.png" alt="Torchbearers flyer 2" onclick="openLightbox(this.src, this.alt)">
           </div>
           <p class="gallery-caption">Torchbearers biweekly program flyer</p>
         </div>
@@ -723,14 +707,14 @@
       <span class="gallery-label">Camp &amp; Event Flyers</span>
       <div class="gallery-grid cols-2">
         <div class="gallery-item">
-          <div class="gallery-img tall">
-            <img src="images/MAS Youth Summer Camp - 1.PNG" alt="MAS Youth Summer Camp flyer">
+          <div class="gallery-img tall expandable">
+            <img src="images/MAS Youth Summer Camp - 1.PNG" alt="MAS Youth Summer Camp flyer" onclick="openLightbox(this.src, this.alt)">
           </div>
           <p class="gallery-caption">MAS Youth Summer Camp flyer</p>
         </div>
         <div class="gallery-item">
-          <div class="gallery-img tall">
-            <img src="images/Ramadan Kareem.PNG" alt="Ramadan Kareem event flyer">
+          <div class="gallery-img tall expandable">
+            <img src="images/Ramadan Kareem.PNG" alt="Ramadan Kareem event flyer" onclick="openLightbox(this.src, this.alt)">
           </div>
           <p class="gallery-caption">Ramadan Kareem mosque event flyer</p>
         </div>
@@ -741,20 +725,20 @@
       <span class="gallery-label">Youth Calendar</span>
       <div class="gallery-grid cols-3">
         <div class="gallery-item">
-          <div class="gallery-img wide">
-            <img src="images/Youth Overview Calendar - 1.PNG" alt="Youth overview calendar 1">
+          <div class="gallery-img wide expandable">
+            <img src="images/Youth Overview Calendar - 1.PNG" alt="Youth overview calendar 1" onclick="openLightbox(this.src, this.alt)">
           </div>
           <p class="gallery-caption">Youth overview calendar</p>
         </div>
         <div class="gallery-item">
-          <div class="gallery-img wide">
-            <img src="images/Youth Overview Calendar - 2.PNG" alt="Youth overview calendar 2">
+          <div class="gallery-img wide expandable">
+            <img src="images/Youth Overview Calendar - 2.PNG" alt="Youth overview calendar 2" onclick="openLightbox(this.src, this.alt)">
           </div>
           <p class="gallery-caption">Youth overview calendar</p>
         </div>
         <div class="gallery-item">
-          <div class="gallery-img wide">
-            <img src="images/Youth Overview Calendar - 3.PNG" alt="Youth overview calendar 3">
+          <div class="gallery-img wide expandable">
+            <img src="images/Youth Overview Calendar - 3.PNG" alt="Youth overview calendar 3" onclick="openLightbox(this.src, this.alt)">
           </div>
           <p class="gallery-caption">Youth overview calendar</p>
         </div>
@@ -808,7 +792,7 @@
 
     <div class="gallery-section">
       <span class="gallery-label">Campaign Graphics</span>
-      <div class="gallery-grid cols-2">
+      <div class="gallery-grid cols-3">
         <div class="gallery-item">
           <div class="gallery-img square">
             <img src="images/Unity in Ramadan - 1.PNG" alt="Unity in Ramadan campaign post">
@@ -822,14 +806,10 @@
           <p class="gallery-caption">Unity in Ramadan — light version</p>
         </div>
         <div class="gallery-item">
-          <div class="gallery-img tall">
-            <img src="images/Just signed up with CW!!.PNG" alt="Charity Week sign up flyer">
+          <div class="gallery-img tall expandable">
+            <img src="images/Just signed up with CW!!.PNG" alt="Charity Week sign up flyer" onclick="openLightbox(this.src, this.alt)">
           </div>
           <p class="gallery-caption">Charity Week sign-up campaign flyer</p>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-img tall"><div class="img-placeholder ph-ink"><div class="placeholder-icon">◈</div><p>Add campaign graphic</p></div></div>
-          <p class="gallery-caption">Add caption</p>
         </div>
       </div>
     </div>
@@ -895,8 +875,8 @@
           <p class="gallery-caption">NASA event flyer</p>
         </div>
         <div class="gallery-item">
-          <div class="gallery-img square">
-            <img src="images/Sacha DUbois - 1.PNG" alt="NASA social media post">
+          <div class="gallery-img square expandable">
+            <img src="images/Sacha DUbois - 1.PNG" alt="NASA social media post" onclick="openLightbox(this.src, this.alt)">
           </div>
           <p class="gallery-caption">NASA social media post</p>
         </div>
@@ -923,6 +903,22 @@
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }, 50);
   }
+  function openLightbox(src, alt) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-img').alt = alt;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+ 
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+   <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+   <img id="lightbox-img" src="" alt="">
+  </div>
+ 
 </script>
 </body>
 </html>
