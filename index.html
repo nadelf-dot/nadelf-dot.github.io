@@ -10,18 +10,18 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --ink: #1F1A16;
-    --chalk: #FDFAF5;
-    --chalk-dark: #F2EDE3;
-    --rose: #A0522D;
-    --rose-light: #C47A5A;
-    --fern: #5C7A5E;
-    --fern-light: #8FAF92;
-    --gold: #B89A6A;
-    --dusk: #5E4E6B;
+    --ink: #1B2A4A;
+    --chalk: #F8F6F1;
+    --chalk-dark: #EDE8DF;
+    --rose: #6B3A2A;
+    --rose-light: #8C5240;
+    --fern: #4A7C6F;
+    --fern-light: #7AA89E;
+    --gold: #B08C6A;
+    --dusk: #708090;
     --white: #FFFFFF;
-    --muted: #7C7468;
-    --border: #DDD6CA;
+    --muted: #7A7D82;
+    --border: #D8D4CC;
   }
 
   html { scroll-behavior: smooth; }
@@ -29,7 +29,7 @@
 
   /* LIGHTBOX */
   .gallery-img.expandable { cursor: zoom-in; }
-  .lightbox { display: none; position: fixed; inset: 0; background: rgba(31,26,22,0.93); z-index: 999; align-items: center; justify-content: center; padding: 2rem; }
+  .lightbox { display: none; position: fixed; inset: 0; background: rgba(27,42,74,0.93); z-index: 999; align-items: center; justify-content: center; padding: 2rem; }
   .lightbox.open { display: flex; }
   .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; display: block; }
   .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; font-size: 1.5rem; color: #FDFAF5; cursor: pointer; background: none; border: none; font-family: 'Inter', sans-serif; opacity: 0.7; }
@@ -40,7 +40,7 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
     padding: 1rem 3rem;
-    background: rgba(253,250,245,0.96); backdrop-filter: blur(10px);
+    background: rgba(248,246,241,0.96); backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
   }
   .nav-logo { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--ink); cursor: pointer; letter-spacing: 0.01em; }
@@ -62,8 +62,7 @@
   .btn-outline:hover { border-color: var(--rose); color: var(--rose); }
 
   /* HERO */
-  .hero-wrap { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 3rem 5rem; max-width: 1300px; margin: 0 auto; padding-top: 2rem; }  .hero-tag { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.08em; }
-  .hero-tag span { color: var(--rose); }
+  .hero-wrap { display: flex; flex-direction: column; justify-content: center; padding: 5rem 3rem 4rem; max-width: 1300px; margin: 0 auto; }  .hero-tag span { color: var(--rose); }
   .hero-number { font-family: 'Playfair Display', serif; font-size: 6rem; color: var(--chalk-dark); line-height: 1; font-weight: 700; user-select: none; }
   .hero-main { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: end; }
   .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 5.5vw, 5.5rem); line-height: 1.05; color: var(--ink); font-weight: 400; }
@@ -116,7 +115,7 @@
   .about-eyebrow { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--rose-light); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
   .about-eyebrow::after { content: ''; flex: 0 0 40px; height: 1px; background: var(--rose); opacity: 0.4; }
   .about-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.1; color: var(--chalk); font-weight: 400; margin-bottom: 2rem; }
-  .about-text p { font-size: 0.95rem; line-height: 1.9; color: rgba(253,250,245,0.62); margin-bottom: 1.25rem; }
+  .about-text p { font-size: 0.95rem; line-height: 1.9; color: rgba(248,246,241,0.62); margin-bottom: 1.25rem; }
   .about-text p strong { color: var(--rose-light); font-weight: 500; }
   .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
   .skill-item { padding: 1rem 0; border-bottom: 1px solid rgba(253,250,245,0.07); display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; color: rgba(253,250,245,0.5); }
@@ -142,7 +141,7 @@
   .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
   .btn-contact-primary { display: inline-block; padding: 0.9rem 2.2rem; background: var(--chalk); color: var(--fern); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-decoration: none; cursor: pointer; border: none; font-family: 'Inter', sans-serif; transition: all 0.2s; }
   .btn-contact-primary:hover { background: var(--ink); color: var(--chalk); }
-  .contact-detail { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: rgba(253,250,245,0.45); margin-top: 2.5rem; letter-spacing: 0.08em; }
+  .contact-detail { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: rgba(248,246,241,0.45); margin-top: 2.5rem; letter-spacing: 0.08em; }
 
   /* SVG BANNER */
   .svg-banner { background: var(--ink); width: 100%; overflow: hidden; line-height: 0; }
@@ -175,7 +174,7 @@
   .gallery-img.square { aspect-ratio: 1; }
   .gallery-img.tall { aspect-ratio: 3/4; }
   .gallery-img.wide { aspect-ratio: 16/9; }
-  .gallery-img.contain { aspect-ratio: 4/3; background: var(--white); }
+  .gallery-img.contain { aspect-ratio: 1; background: var(--white); }
   .gallery-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .gallery-img.contain img { object-fit: contain; }
   .gallery-caption { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
@@ -185,7 +184,7 @@
   /* MISC */
   .misc-masonry { columns: 3; column-gap: 1rem; }
   .misc-item { break-inside: avoid; margin-bottom: 1rem; }
-  .misc-item img { width: 100%; display: block; }
+  .misc-item img { width: 100%; display: block; cursor: zoom-in; }
   .misc-item .gallery-caption { margin-top: 0.4rem; }
   @media (max-width: 900px) { .misc-masonry { columns: 2; } }
   @media (max-width: 560px) { .misc-masonry { columns: 1; } }
@@ -322,13 +321,13 @@
     </div>
   </section>
 
-  <div class="svg-banner">
+ <div class="svg-banner">
     <svg viewBox="0 0 1200 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
-      <rect width="1200" height="160" fill="#1F1A16"/>
-      <line x1="0" y1="80" x2="1200" y2="80" stroke="#FDFAF5" stroke-width="0.5" opacity="0.06"/>
-      <line x1="0" y1="40" x2="1200" y2="40" stroke="#FDFAF5" stroke-width="0.5" opacity="0.04"/>
-      <line x1="0" y1="120" x2="1200" y2="120" stroke="#FDFAF5" stroke-width="0.5" opacity="0.04"/>
-      <g fill="none" stroke="#A0522D" stroke-width="1" opacity="0.4">
+      <rect width="1200" height="160" fill="#1B2A4A"/>
+      <line x1="0" y1="80" x2="1200" y2="80" stroke="#F8F6F1" stroke-width="0.5" opacity="0.06"/>
+      <line x1="0" y1="40" x2="1200" y2="40" stroke="#F8F6F1" stroke-width="0.5" opacity="0.04"/>
+      <line x1="0" y1="120" x2="1200" y2="120" stroke="#F8F6F1" stroke-width="0.5" opacity="0.04"/>
+      <g fill="none" stroke="#6B3A2A" stroke-width="1" opacity="0.4">
         <rect x="60" y="60" width="40" height="40" transform="rotate(45,80,80)"/>
         <rect x="160" y="60" width="40" height="40" transform="rotate(45,180,80)"/>
         <rect x="260" y="60" width="40" height="40" transform="rotate(45,280,80)"/>
@@ -342,7 +341,7 @@
         <rect x="1060" y="60" width="40" height="40" transform="rotate(45,1080,80)"/>
         <rect x="1160" y="60" width="40" height="40" transform="rotate(45,1180,80)"/>
       </g>
-      <g stroke="#A0522D" stroke-width="0.5" opacity="0.2">
+      <g stroke="#6B3A2A" stroke-width="0.5" opacity="0.2">
         <line x1="108" y1="80" x2="152" y2="80"/><line x1="208" y1="80" x2="252" y2="80"/>
         <line x1="308" y1="80" x2="352" y2="80"/><line x1="408" y1="80" x2="452" y2="80"/>
         <line x1="508" y1="80" x2="552" y2="80"/><line x1="608" y1="80" x2="652" y2="80"/>
@@ -350,7 +349,7 @@
         <line x1="908" y1="80" x2="952" y2="80"/><line x1="1008" y1="80" x2="1052" y2="80"/>
         <line x1="1108" y1="80" x2="1152" y2="80"/>
       </g>
-      <g fill="#A0522D" opacity="0.5">
+      <g fill="#6B3A2A" opacity="0.5">
         <rect x="74" y="74" width="12" height="12" transform="rotate(45,80,80)"/>
         <rect x="274" y="74" width="12" height="12" transform="rotate(45,280,80)"/>
         <rect x="474" y="74" width="12" height="12" transform="rotate(45,480,80)"/>
@@ -358,14 +357,14 @@
         <rect x="874" y="74" width="12" height="12" transform="rotate(45,880,80)"/>
         <rect x="1074" y="74" width="12" height="12" transform="rotate(45,1080,80)"/>
       </g>
-      <g fill="#5C7A5E" opacity="0.45">
+      <g fill="#4A7C6F" opacity="0.45">
         <circle cx="80" cy="20" r="3"/><circle cx="280" cy="20" r="3"/><circle cx="480" cy="20" r="3"/>
         <circle cx="680" cy="20" r="3"/><circle cx="880" cy="20" r="3"/><circle cx="1080" cy="20" r="3"/>
         <circle cx="80" cy="140" r="3"/><circle cx="280" cy="140" r="3"/><circle cx="480" cy="140" r="3"/>
         <circle cx="680" cy="140" r="3"/><circle cx="880" cy="140" r="3"/><circle cx="1080" cy="140" r="3"/>
       </g>
-      <line x1="0" y1="2" x2="1200" y2="2" stroke="#A0522D" stroke-width="1" opacity="0.3"/>
-      <line x1="0" y1="158" x2="1200" y2="158" stroke="#A0522D" stroke-width="1" opacity="0.3"/>
+      <line x1="0" y1="2" x2="1200" y2="2" stroke="#6B3A2A" stroke-width="1" opacity="0.3"/>
+      <line x1="0" y1="158" x2="1200" y2="158" stroke="#6B3A2A" stroke-width="1" opacity="0.3"/>
     </svg>
   </div>
 
@@ -465,15 +464,15 @@
   </div>
   <div class="project-body">
     <div class="misc-masonry">
-      <div class="misc-item"><img src="images/IMG_5372.PNG" alt="Logo for online shop" style="width:100%;display:block;"><p class="gallery-caption">Logo for online shop</p></div>
-      <div class="misc-item"><img src="images/IMG_5377.PNG" alt="Miftaah Juniors merch mockup back" style="width:100%;display:block;"><p class="gallery-caption">Miftaah Juniors merch mockup — back</p></div>
-      <div class="misc-item"><img src="images/IMG_5378.PNG" alt="Miftaah Juniors merch mockup front" style="width:100%;display:block;"><p class="gallery-caption">Miftaah Juniors merch mockup — front</p></div>
-      <div class="misc-item"><img src="images/IMG_5379.PNG" alt="Merch design" style="width:100%;display:block;"><p class="gallery-caption">Miftaah Juniors merch mockup</p></div>
-      <div class="misc-item"><img src="images/IMG_5376.PNG" alt="Merch design 2" style="width:100%;display:block;"><p class="gallery-caption">Miftaah Juniors merch mockup</p></div>
-      <div class="misc-item"><img src="images/Ramadan Infographic.PNG" alt="Ramadan infographic" style="width:100%;display:block;"><p class="gallery-caption">Ramadan infographic</p></div>
-      <div class="misc-item"><img src="images/Untitled_Artwork.jpg" alt="Windsor mosque illustration draft" style="width:100%;display:block;"><p class="gallery-caption">Windsor mosque illustration draft</p></div>
-      <div class="misc-item"><img src="images/IMG_5313.jpg" alt="Camp merch design draft" style="width:100%;display:block;"><p class="gallery-caption">Camp merch design draft</p></div>
-      <div class="misc-item"><img src="images/Untitled_Artwork 2.jpg" alt="Digital illustration" style="width:100%;display:block;"><p class="gallery-caption">Digital illustration</p></div>
+      <div class="misc-item"><img src="images/IMG_5372.PNG" alt="Logo for online shop" style="width:100%;display:block;" onclick="openLightbox(this.src, this.alt)"><p class="gallery-caption">Logo for online shop</p></div>
+      <div class="misc-item"><img src="images/IMG_5377.PNG" alt="Miftaah Juniors merch mockup back" style="width:100%;display:block;" onclick="openLightbox(this.src, this.alt)"><p class="gallery-caption">Miftaah Juniors merch mockup — back</p></div>
+      <div class="misc-item"><img src="images/IMG_5378.PNG" alt="Miftaah Juniors merch mockup front" style="width:100%;display:block;" onclick="openLightbox(this.src, this.alt)"><p class="gallery-caption">Miftaah Juniors merch mockup — front</p></div>
+      <div class="misc-item"><img src="images/IMG_5379.PNG" alt="Merch design" style="width:100%;display:block;" onclick="openLightbox(this.src, this.alt)"><p class="gallery-caption">Miftaah Juniors merch mockup</p></div>
+      <div class="misc-item"><img src="images/IMG_5376.PNG" alt="Merch design 2" style="width:100%;display:block;" onclick="openLightbox(this.src, this.alt)"><p class="gallery-caption">Miftaah Juniors merch mockup</p></div>
+      <div class="misc-item"><img src="images/Ramadan Infographic.PNG" alt="Ramadan infographic" style="width:100%;display:block;" onclick="openLightbox(this.src, this.alt)"><p class="gallery-caption">Ramadan infographic</p></div>
+      <div class="misc-item"><img src="images/Untitled_Artwork.jpg" alt="Windsor mosque illustration draft" style="width:100%;display:block;" onclick="openLightbox(this.src, this.alt)"><p class="gallery-caption">Windsor mosque illustration draft</p></div>
+      <div class="misc-item"><img src="images/IMG_5313.jpg" alt="Camp merch design draft" style="width:100%;display:block;" onclick="openLightbox(this.src, this.alt)"><p class="gallery-caption">Camp merch design draft</p></div>
+      <div class="misc-item"><img src="images/Untitled_Artwork 2.jpg" alt="Digital illustration" style="width:100%;display:block;" onclick="openLightbox(this.src, this.alt)"><p class="gallery-caption">Digital illustration</p></div>
     </div>
    
 </div>
@@ -511,11 +510,11 @@
       <span class="gallery-label">Logo &amp; Mark</span>
       <div class="gallery-grid cols-2">
         <div class="gallery-item">
-          <div class="gallery-img contain"><img src="images/IMG_5375.PNG" alt="Tadabbur logo light background" style="object-fit:contain;"></div>
+          <div class="gallery-img contain"><img src="images/IMG_5375.PNG" alt="Tadabbur logo light background" style="object-fit:contain;" onclick="openLightbox(this.src, this.alt)"></div>
           <p class="gallery-caption"><strong>Primary logo</strong> — light background version</p>
         </div>
         <div class="gallery-item">
-          <div class="gallery-img contain" style="background:#1F1A16;"><img src="images/IMG_5374.PNG" alt="Tadabbur logo dark background" style="object-fit:contain;"></div>
+          <div class="gallery-img contain" style="background:#1B2A4A;"><img src="images/IMG_5374.PNG" alt="Tadabbur logo dark background" style="object-fit:contain;" onclick="openLightbox(this.src, this.alt)"></div>
           <p class="gallery-caption"><strong>Primary logo</strong> — dark background version</p>
         </div>
       </div>
@@ -528,16 +527,16 @@
           <p class="gallery-caption">Sip &amp; Script — A Calligraphy Workshop event flyer</p>
         </div>
         <div class="gallery-item">
-          <div class="gallery-img square"><img src="images/The Status of Women in Islam - Design 1, 1.PNG" alt="Status of Women in Islam social post cover"></div>
+          <div class="gallery-img square"><img src="images/The Status of Women in Islam - Design 1, 1.PNG" alt="Status of Women in Islam social post cover" onclick="openLightbox(this.src, this.alt)"></div>
           <p class="gallery-caption">The Status of Women in Islam — social media cover slide</p>
         </div>
         <div class="gallery-item">
-          <div class="gallery-img square"><img src="images/The Status of Women in Islam - Design 1, 2.PNG" alt="Status of Women in Islam social content slide"></div>
+          <div class="gallery-img square"><img src="images/The Status of Women in Islam - Design 1, 2.PNG" alt="Status of Women in Islam social content slide" onclick="openLightbox(this.src, this.alt)"></div>
           <p class="gallery-caption">The Status of Women in Islam - content slide</p>
         </div>
         <div class="gallery-item">
-          <div class="gallery-img square"><img src="images/Post Allah Loves.png" alt="Allah loves post"></div>
-          <p class="gallery-caption">Allah Loves social media post</p>
+          <div class="gallery-img square"><img src="images/Post Allah Loves.png" alt="Allah loves post" onclick="openLightbox(this.src, this.alt)"></div>
+          <p class="gallery-caption">"Allah Loves" social media post</p>
         </div>
       </div>
     </div>
@@ -545,11 +544,11 @@
       <span class="gallery-label">Merch</span>
       <div class="gallery-grid cols-2">
         <div class="gallery-item">
-          <div class="gallery-img square"><img src="images/segment_1.JPG" alt="Tadabbur merch photo 2"></div>
+          <div class="gallery-img square"><img src="images/segment_1.JPG" alt="Tadabbur merch photo 2" onclick="openLightbox(this.src, this.alt)"></div>
           <p class="gallery-caption">Tadabbur merch — in real life</p>
         </div>
         <div class="gallery-item">
-          <div class="gallery-img square"><img src="images/DSC04958.JPG" alt="Tadabbur merch photo"></div>
+          <div class="gallery-img square"><img src="images/DSC04958.JPG" alt="Tadabbur merch photo" onclick="openLightbox(this.src, this.alt)"></div>
           <p class="gallery-caption">Tadabbur merch — in real life</p>
         </div>
       </div>
@@ -627,11 +626,11 @@
       <span class="gallery-label">Merch</span>
       <div class="gallery-grid cols-2">
         <div class="gallery-item">
-          <div class="gallery-img"><img src="images/MAS_Detroit_Merch.png" alt="MAS Detroit merch mockup"></div>
+          <div class="gallery-img"><img src="images/MAS_Detroit_Merch.png" alt="MAS Detroit merch mockup" onclick="openLightbox(this.src, this.alt)"></div>
           <p class="gallery-caption">MAS Detroit merch mockup</p>
         </div>
         <div class="gallery-item">
-          <div class="gallery-img"><img src="images/MAS_Detroit_Merch.jpg" alt="MAS Detroit merch mockup 2"></div>
+          <div class="gallery-img"><img src="images/MAS_Detroit_Merch.jpg" alt="MAS Detroit merch mockup 2" onclick="openLightbox(this.src, this.alt)"></div>
           <p class="gallery-caption">MAS Detroit merch mockup</p>
         </div>
       </div>
@@ -666,11 +665,11 @@
       <span class="gallery-label">Campaign Graphics</span>
       <div class="gallery-grid cols-3">
         <div class="gallery-item">
-          <div class="gallery-img square"><img src="images/Unity in Ramadan - 1.PNG" alt="Unity in Ramadan campaign post"></div>
+          <div class="gallery-img square"><img src="images/Unity in Ramadan - 1.PNG" alt="Unity in Ramadan campaign post" onclick="openLightbox(this.src, this.alt)"></div>
           <p class="gallery-caption">Unity in Ramadan — campaign social post</p>
         </div>
         <div class="gallery-item">
-          <div class="gallery-img square"><img src="images/Unity in Ramadan - 4.PNG" alt="Unity in Ramadan light version"></div>
+          <div class="gallery-img square"><img src="images/Unity in Ramadan - 4.PNG" alt="Unity in Ramadan light version" onclick="openLightbox(this.src, this.alt)"></div>
           <p class="gallery-caption">Unity in Ramadan — light version</p>
         </div>
         <div class="gallery-item">
@@ -709,15 +708,15 @@
       <span class="gallery-label">Logo &amp; Sticker Designs</span>
       <div class="gallery-grid cols-3">
         <div class="gallery-item">
-          <div class="gallery-img contain"><img src="images/NASA Sticker Designs - 7.PNG" alt="NASA sticker light background" style="object-fit:contain;"></div>
+          <div class="gallery-img contain"><img src="images/NASA Sticker Designs - 7.PNG" alt="NASA sticker light background" style="object-fit:contain;" onclick="openLightbox(this.src, this.alt)"></div>
           <p class="gallery-caption"><strong>Primary mark</strong> — light background</p>
         </div>
         <div class="gallery-item">
-          <div class="gallery-img contain" style="background:#1F1A16;"><img src="images/NASA Sticker Designs - 9.PNG" alt="NASA sticker dark background" style="object-fit:contain;"></div>
+          <div class="gallery-img contain" style="background:#1B2A4A;"><img src="images/NASA Sticker Designs - 9.PNG" alt="NASA sticker dark background" style="object-fit:contain;" onclick="openLightbox(this.src, this.alt)"></div>
           <p class="gallery-caption"><strong>Primary mark</strong> — dark background</p>
         </div>
         <div class="gallery-item">
-          <div class="gallery-img contain"><img src="images/NASA Sticker Designs - 1.PNG" alt="NASA sticker variation" style="object-fit:contain;"></div>
+          <div class="gallery-img contain"><img src="images/NASA Sticker Designs - 1.PNG" alt="NASA sticker variation" style="object-fit:contain;" onclick="openLightbox(this.src, this.alt)"></div>
           <p class="gallery-caption">Logo variation</p>
         </div>
       </div>
